@@ -40,5 +40,51 @@ $(function(){
          }
       }
   })
+ 
+  
+
+  //实现登录注册功能
+
+  //注册功能
+  $("#register").on('submit',function(e){
+    e.preventDefault()
+    $.ajax({
+      url:'http://ajax.frontend.itheima.net/api/reguser',
+      type:'POST',
+      data:{
+        username:$("#register [name=username]").val(),
+        password:$("#register [name=repassword]").val()
+      },
+      success:function(res){
+         //页面切换到登录页面
+         location.href ='/login.html'
+      }
+    })
+  })
+
+  var layer = layui.layer
+
+  // 登录功能
+  $("#loginto").submit(function(e){
+    e.preventDefault()
+    $.ajax({
+      url:'http://ajax.frontend.itheima.net/api/login',
+      type:"POST",
+      data:$(this).serialize(),
+      success:function(res){
+        if(res.status !== 0){
+          return layer.msg('登录失败')
+        }
+        layer.msg('登录成功')
+        //登录成功后将获取到的headers存储到浏览器中
+        localStorage.setItem('token',res.headers)
+        location.href ='/index.html'
+      }
+    })
+  })
+
+
+
+
 
 })

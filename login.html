@@ -26,15 +26,15 @@
 
         <!-- 登录 -->
         <div class="login-box">
-            <form class="layui-form" action="">
+            <form class="layui-form" action="" id="loginto">
                 <div class="layui-form-item">
                     <i class="layui-icon layui-icon-username"></i>
-                    <input type="text" name="title" required lay-verify="required|username" placeholder="请输入用户名"
+                    <input type="text" name="username" required lay-verify="required|username" placeholder="请输入用户名"
                         autocomplete="off" class="layui-input">
                 </div>
                 <div class="layui-form-item">
                     <i class="layui-icon layui-icon-password"></i>
-                    <input type="text" name="title" required lay-verify="required|pass" placeholder="请输入密码"
+                    <input type="password" name="password" required lay-verify="required|pass" placeholder="请输入密码"
                         autocomplete="off" class="layui-input">
                 </div>
                 <div class="layui-form-item">
@@ -49,7 +49,7 @@
         <!-- 注册 -->
         <div class="reg-box">
 
-            <form class="layui-form" action="">
+            <form class="layui-form" action="" id="register">
                 <div class="layui-form-item">
                     <i class="layui-icon layui-icon-username"></i>
                     <input type="text" name="username" required lay-verify="required|username" placeholder="请输入用户名"
@@ -69,7 +69,8 @@
                     <button class="layui-btn layui-btn-fluid" lay-submit lay-filter="formDemo">注册</button>
                 </div>
                 <div class="layui-form-item">
-                    <a href="javascript:;" id="reg_box">去登录账户</a>            </form>
+                    <a href="javascript:;" id="reg_box">去登录账户</a>  
+            </form>
 
           
         </div>
