@@ -49,7 +49,7 @@ $(function(){
   $("#register").on('submit',function(e){
     e.preventDefault()
     $.ajax({
-      url:'http://ajax.frontend.itheima.net/api/reguser',
+      url:'/api/reguser',
       type:'POST',
       data:{
         username:$("#register [name=username]").val(),
@@ -68,7 +68,7 @@ $(function(){
   $("#loginto").submit(function(e){
     e.preventDefault()
     $.ajax({
-      url:'http://ajax.frontend.itheima.net/api/login',
+      url:'/api/login',
       type:"POST",
       data:$(this).serialize(),
       success:function(res){
@@ -77,8 +77,9 @@ $(function(){
         }
         layer.msg('登录成功')
         //登录成功后将获取到的headers存储到浏览器中
-        localStorage.setItem('token',res.headers)
-        location.href ='/index.html'
+         localStorage.setItem('token',res.token)
+        
+         location.href ='/index.html'
       }
     })
   })
