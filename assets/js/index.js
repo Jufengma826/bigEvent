@@ -9,6 +9,7 @@ $(function(){
              success:function(res){
                renderData(res.data)
             }
+            
         })
     }
 
